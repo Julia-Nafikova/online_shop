@@ -53,11 +53,3 @@ class NetworkLink(models.Model):
 
     def __str__(self):
         return f"{self.name}"
-
-    def get_level(self):
-        level = 0
-        supplier = self.supplier
-        while supplier:
-            level += 1
-            supplier = supplier.supplier
-        return level
